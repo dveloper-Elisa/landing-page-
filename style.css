@@ -27,14 +27,22 @@ a:hover {
 .navmenu {
   display: flex;
 }
-.navmenu div {
+.navmenu ol {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 0px 6px;
 }
+li {
+  margin: 0.2rem 1rem;
+  list-style: none;
+  gap: 100px;
+}
 .navmenu {
   display: flex;
+}
+.menu li {
+  display: none;
 }
 .owesome {
   display: flex;
@@ -86,30 +94,33 @@ button {
   flex-direction: column;
   float: left;
 }
-
-.footering button {
-  border: 1px solid #f9faf8;
-  float: right;
-}
 .footering {
-  display: flex;
   align-items: center;
   background-color: #3882f6;
   border-radius: 10px;
   color: #e5e7eb;
   height: 100px;
 }
+.footering button {
+  border: 1px solid #f9faf8;
+  float: right;
+}
+
 .footering div {
   display: block;
   flex: 1;
   padding: 1.5rem 1.5rem;
 }
+
 .bodydiv {
   flex-direction: column;
   align-items: center;
   padding: 0.4rem 2rem;
 }
-
+.image img {
+  border-radius: 10px;
+  background: transparent;
+}
 img {
   max-width: 16rem;
   height: 10rem;
@@ -144,19 +155,59 @@ h5 {
   display: none;
 }
 
-@media (max-width: 700px) and (min-width: 500px) {
+@media (max-width: 750px) {
+  .owesome {
+    display: flex;
+    padding: 2rem 5rem;
+    flex-direction: column;
+    justify-content: center;
+    float: 1;
+  }
+  .image img {
+    border-radius: 10px;
+  }
   .images {
     display: flex;
     flex-direction: column;
   }
   img {
+    display: flex;
+    flex-direction: column;
     max-width: 16rem;
     height: 10rem;
   }
-  .navmenu {
+
+  .nav li {
+    width: 100%;
+    background-color: #1f2937;
+    position: absolute;
+    z-index: 9;
     display: none;
   }
+  .menu li {
+    display: block;
+    transform: rotate(0deg);
+    cursor: pointer;
+  }
+
+  .menu li:hover {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    transform: rotate(45deg);
+    transition: 0.5s;
+  }
+  .menu li:hover .nav li {
+    display: block;
+    z-index: 4;
+  }
+
   h5 {
     display: block;
+  }
+  .footering {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 30vh;
   }
 }
