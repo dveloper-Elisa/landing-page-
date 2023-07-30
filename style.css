@@ -95,6 +95,7 @@ button {
   float: left;
 }
 .footering {
+  display:flex;
   align-items: center;
   background-color: #3882f6;
   border-radius: 10px;
